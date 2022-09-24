@@ -1,5 +1,75 @@
-<html>
-  <body>
-    hi Im space yam
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SliderDemo</title>
+
+    <!-- PrimeReact -->
+    <link rel="stylesheet" href="https://unpkg.com/primeicons/primeicons.css" />
+    <link rel="stylesheet" href="https://unpkg.com/primereact/resources/themes/lara-light-indigo/theme.css" />
+    <link rel="stylesheet" href="https://unpkg.com/primereact/resources/primereact.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/primeflex@3.2.1/primeflex.min.css" />
+
+    <!-- Dependencies -->
+    <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/react-transition-group@4.4.2/dist/react-transition-group.js"></script>
+
+    <!-- Demo -->
+    <script src="https://unpkg.com/primereact/core/core.min.js"></script>
+
+    <style>
+        * {margin:0; padding:0;}
+        html, body {min-width:1200px; width:100%;height:100%; }
+        #root, .App { width:100%; height:100% }
+        
+        img { position: absolute; height: 300px; left: 35%; top: 120px; }
+        p { top: 32px; position: relative; }
+
+        .App { text-align: center; }
+        .App-logo { height: 40vmin; pointer-events: none; }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .App-logo { animation: App-logo-spin infinite 20s linear; }
+        }
+
+        .App-header {
+            width:100%; height:100%;
+            background-color: #282c34; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; font-size: calc(10px + 2vmin); color: white;
+        }
+
+        .App-link { color: #61dafb; }
+
+        @keyframes App-logo-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useEffect, useState } = React;
+
+        const App = () => {
+            return (
+            <div className="App">
+                <img src="./spaceyam.png" class="App-logo"/>
+                <header className="App-header">
+                    <p>hi, Im space yam!</p>
+                </header>
+            </div>
+            );
+        }
+        const rootElement = document.getElementById("root");
+        ReactDOM.render(<App />, rootElement);
+
+    </script>
+</body>
 </html>
