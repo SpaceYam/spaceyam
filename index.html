@@ -48,7 +48,7 @@
 
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
-        const {Link, Route} = ReactRouterDOM;
+        const {Switch, Route} = ReactRouterDOM;
 
         const App = () => {
             const loc = window.location;
@@ -63,9 +63,11 @@
             <div className="App">
                 <img src="./spaceyam.png" class="App-logo"/>
                 <ReactRouterDOM.HashRouter>
-                    <Route path="/" component={PageA} exact />
-                    <Route path="/blue" component={PageB} />
-                    <Route path="*" component={PageC} />
+                    <Switch>
+                        <Route path="/" component={PageA} exact />
+                        <Route path="/blue" component={PageB} />
+                        <Route path="*" component={PageC} />
+                    </Switch>
                 </ReactRouterDOM.HashRouter>
             </div>
             );
