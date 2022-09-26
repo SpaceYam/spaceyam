@@ -4,23 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>SliderDemo</title>
+    <title>Space Yam`s</title>
 
-    <!-- PrimeReact -->
-    <link rel="stylesheet" href="https://unpkg.com/primeicons/primeicons.css" />
-    <link rel="stylesheet" href="https://unpkg.com/primereact/resources/themes/lara-light-indigo/theme.css" />
-    <link rel="stylesheet" href="https://unpkg.com/primereact/resources/primereact.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/primeflex@3.2.1/primeflex.min.css" />
-
-    <!-- Dependencies -->
-    <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/react-transition-group@4.4.2/dist/react-transition-group.js"></script>
-
-    <!-- Demo -->
-    <script src="https://unpkg.com/primereact/core/core.min.js"></script>
-
+    <!-- React -->
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+    <script src='https://unpkg.com/react@16.3.1/umd/react.production.min.js'></script>
+    <script src='https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js'></script>
+    <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space Mono">
     <style>
         * {margin:0; padding:0;}
@@ -56,17 +47,67 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useEffect, useState } = React;
+        const { useState, useEffect, useRef } = React;
+        const {Link, Route} = ReactRouterDOM;
 
         const App = () => {
+            const loc = window.location;
+            const url = window.location.href.split('/')
+                ,path1 = url[url.length-2]
+                ,path2 = url[url.length-1].split('?')[0]
+                ,pathname = window.location.pathname.split('/')
+                ,pathname1 = pathname[pathname.length-2]
+                ,pathname2 = pathname[pathname.length-1];
+            console.log('pathInfo:',loc,url,path1,path2); 
             return (
             <div className="App">
                 <img src="./spaceyam.png" class="App-logo"/>
-                <header className="App-header">
-                    <p>howdy, Im space yam!</p>
-                </header>
+                <ReactRouterDOM.HashRouter>
+                    <Route path="/" component={PageA} exact />
+                    <Route path="/blue" component={PageB} />
+                    <Route path="*" component={PageC} />
+                </ReactRouterDOM.HashRouter>
             </div>
             );
+
+            function PageA (props) {
+                let toRender = 
+                <React.Fragment> 
+                <header className="App-header" style={{backgroundColor:"#5AA17F"}}>
+                    <p>howdy, Im space yam!</p>
+                </header>
+                </React.Fragment>
+                return(
+                <React.Fragment> 
+                {toRender}
+                </React.Fragment>); 
+            };
+
+            function PageB (props) {
+                let toRender = 
+                <React.Fragment> 
+                <header className="App-header" >
+                    <p>growing on space soil</p>
+                </header>
+                </React.Fragment>
+                return(
+                <React.Fragment> 
+                {toRender}
+                </React.Fragment>); 
+            };
+
+            function PageC (props) {
+                let toRender = 
+                <React.Fragment> 
+                <header className="App-header" style={{backgroundColor:"#e45370"}}>
+                    <p>sorry, maybe you lost your way</p>
+                </header>
+                </React.Fragment>
+                return(
+                <React.Fragment> 
+                {toRender}
+                </React.Fragment>); 
+            };
         }
         const rootElement = document.getElementById("root");
         ReactDOM.render(<App />, rootElement);
