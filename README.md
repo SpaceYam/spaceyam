@@ -6,5 +6,5 @@
 &nbsp;
 ## About this ##
 <pre>
-come and see at https://spaceyam.github.io/spaceyam/
+come and see at https://spaceyam.github.io/spaceyam/#/blue
 </pre>
