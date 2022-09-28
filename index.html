@@ -16,6 +16,10 @@
     <style>
         /* 부트스트랩 http://bootstrapk.com/css/ https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.css */
         /* 매우 작은 기기들(모바일폰, 768px 보다 작은)은 기본이므로 미디어쿼리가 없습니다. */
+        @media (max-width: 575px) {
+            .App-logo { left:38%;top:38%;height:21vmin; }
+            p { display:none; }
+        }
         @media (min-width: 576px) {
             .root { max-width: 540px; }
             .App-logo { left:50px;top:180px;height:21vmin; }
