@@ -1,0 +1,59 @@
+<body style="background-color:black">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space Mono">
+<style>
+    /* 부트스트랩 http://bootstrapk.com/css/ https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.css */
+    /* 매우 작은 기기들(모바일폰, 768px 보다 작은)은 기본이므로 미디어쿼리가 없습니다. */
+    @media (max-width: 575px) {
+        .App { left:38%;top:38%; }
+        .App-logo { height:21vmin; }
+        p { display:none; }
+        .eaten { top:-70px;height:100px;width:100px; }
+    }
+    @media (min-width: 576px) {
+        body { max-width: 540px; }
+        .App { left:230px;top:180px; }
+        .App-logo { height:21vmin; }
+        p { color:pink }
+        .eaten { top:-60px;height:120px;width:120px; }
+    }
+    @media (min-width: 768px) {
+        body { max-width: 720px; }
+        .App { left:300px;top:200px; }
+        .App-logo { height:25vmin; }
+        p { color:burlywood }
+        .eaten { top:-40px;height:150px;width:150px; }
+    }
+    @media (min-width: 992px) {
+        body { max-width: 960px; }
+        .App { left:370px;top:210px; }
+        .App-logo { height:28vmin; }
+        p { color:cyan }
+        .eaten { top:-30px;height:180px;width:180px; }
+    }
+    @media (min-width: 1200px) {
+        body { max-width: 1140px; }
+        .App { left:430px;top:210px; }
+        .App-logo { height:30vmin; }
+        p { color:white }
+        .eaten { top:-30px;height:280px;width:300px; }
+    }
+
+    * {margin:0; padding:0;}
+    html, body { width:100%; height:100%; }
+    .App { position: absolute; }
+
+    /* .App { text-align: center; } */
+    .App-logo { pointer-events: none; }
+    p { position: relative; font-size:26pt; font-family: "Space Mono", sans-serif; }
+
+    .eaten { border-radius:50%; background-color: black; position: absolute;}
+
+</style>
+
+<div class="App">
+    <div class="eaten">&nbsp;</div>
+    <img src="./spaceyam.png" class="App-logo"/>
+    <p>yum yum!</p>
+</div>
+
+</body>
