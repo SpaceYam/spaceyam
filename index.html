@@ -87,7 +87,10 @@
             console.log('pathInfo:',loc,url,path1,path2); 
             return (
             <div className="App">
-                <img src="./spaceyam.png" class="App-logo"/>
+                <img src="./spaceyam.png" className="App-logo"
+                      onClick={()=>{
+                        location.href = 'https://spaceyam.github.io/spaceyam/yumyum.html';
+                      }}/>
                 <ReactRouterDOM.HashRouter>
                     <Switch>
                         <Route path="/" component={PageA} exact />
