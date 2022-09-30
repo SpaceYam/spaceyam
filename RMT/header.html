@@ -1,21 +1,18 @@
-<html>
-<head>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-</head>
 <body>
 <script src='./ref.js'></script>
+<link href='./ref.css'></link>
+<style>
+	body {background-color: grey;}
+</style>
 header
-<div id="header"></div>
+<div id="render"></div>
 <script type='text/babel' src='./modules.js'></script>
 <script type="text/babel">
 
 	ReactDOM.render(
 		<App1/>,
-		document.querySelector("#header")
+		document.querySelector("#render")
 	);
 
 </script>
 </body>
-</html>
